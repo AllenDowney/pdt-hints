@@ -1,7 +1,8 @@
 # Changes here will be overwritten by Copier; do not edit by hand.
-_commit: v0.1.0
+_commit: v0.2.0
 _src_path: /home/downey/PublicDataToolkit
 citation: National Cancer Institute. Health Information National Trends Survey (HINTS).
+copyright_holder: Allen Downey
 dataset_id: hints
 dataset_url: https://hints.cancer.gov/
 description: The National Cancer Institute's nationally representative survey of US
