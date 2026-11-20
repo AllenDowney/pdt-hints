@@ -1,6 +1,6 @@
 {
  "pdt_version": "0.1.0",
- "inputs_sha256": "ee5957fee06d1858d30ef50bf9ea65e8995d5b2dd45d048df11a635374391d55",
+ "inputs_sha256": "c5eabe2d91937bf13b9f713c81c6a4cdb5a1c334a628d032a1452e05ff6dd9fb",
  "generator_sha256": "9ccfde4fa108cb2b4d7e1cdf675082febafe78bc8e89a2be78db6a98e3a26059",
  "dataset": "hints",
  "max_tokens": 20000,
@@ -323,23 +323,23 @@
  "across_releases": [
   {
    "path": "variables.part1.txt",
-   "variables": 436,
-   "tokens": 19131
+   "variables": 428,
+   "tokens": 19110
   },
   {
    "path": "variables.part2.txt",
-   "variables": 356,
-   "tokens": 19126
+   "variables": 343,
+   "tokens": 19216
   },
   {
    "path": "variables.part3.txt",
-   "variables": 313,
-   "tokens": 19252
+   "variables": 325,
+   "tokens": 19205
   },
   {
    "path": "variables.part4.txt",
-   "variables": 275,
-   "tokens": 14217
+   "variables": 58,
+   "tokens": 3642
   }
  ]
 }

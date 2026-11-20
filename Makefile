@@ -11,6 +11,7 @@ download:
 ## Build metadata records from data/raw (build/build_records.py writes build/report.md)
 build:
 	$(PYTHON) build/build_records.py
+	$(PYTHON) build/build_links.py
 
 ## Generate agent/, docs/ and export/ from the records (pdt views)
 views:

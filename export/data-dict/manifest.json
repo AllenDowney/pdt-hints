@@ -1,6 +1,6 @@
 {
  "pdt_version": "0.1.0",
- "inputs_sha256": "ee5957fee06d1858d30ef50bf9ea65e8995d5b2dd45d048df11a635374391d55",
+ "inputs_sha256": "c5eabe2d91937bf13b9f713c81c6a4cdb5a1c334a628d032a1452e05ff6dd9fb",
  "generator_sha256": "9ccfde4fa108cb2b4d7e1cdf675082febafe78bc8e89a2be78db6a98e3a26059",
  "dataset": "hints",
  "spec": "0.1.0",
@@ -19,6 +19,7 @@
    "provenance_fields": 1649,
    "numeric_code_labels": 352,
    "missing_codes": 927,
+   "links": 226,
    "derived": 156
   },
   "hints6": {
@@ -29,6 +30,7 @@
    "provenance_fields": 1814,
    "numeric_code_labels": 400,
    "missing_codes": 1432,
+   "links": 226,
    "derived": 156
   },
   "hints7": {
@@ -39,6 +41,7 @@
    "provenance_fields": 1783,
    "numeric_code_labels": 389,
    "missing_codes": 1334,
+   "links": 226,
    "derived": 156
   }
  }
