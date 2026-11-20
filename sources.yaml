@@ -15,7 +15,7 @@ sources:
     path: data/raw/HINTS5_Cycle4_STATA_20250225.zip
     releases: ["hints5-cycle4"]
     documents: ["hints5-cycle4"]
-    redistribution: unknown
+    redistribution: ship
     acquisition: automated
     fetched_on: "2026-11-20"
     bytes: 13043340
@@ -28,7 +28,7 @@ sources:
     path: data/raw/HINTS6_STATA_20250731.zip
     releases: ["hints6"]
     documents: ["hints6"]
-    redistribution: unknown
+    redistribution: ship
     acquisition: automated
     fetched_on: "2026-11-20"
     bytes: 19007955
@@ -42,7 +42,7 @@ sources:
     path: data/raw/HINTS7_STATA_20250731.zip
     releases: ["hints7"]
     documents: ["hints7"]
-    redistribution: unknown
+    redistribution: ship
     acquisition: automated
     fetched_on: "2026-11-20"
     bytes: 21385084
@@ -54,7 +54,7 @@ sources:
     url: "https://hints.cancer.gov/data/download-data.aspx"
     path: data/raw/hints-download-data_2026-11-20.html
     releases: ["hints5-cycle4", "hints6", "hints7"]
-    redistribution: unknown
+    redistribution: ship
     acquisition: automated
     fetched_on: "2026-11-20"
     bytes: 65111
@@ -67,7 +67,7 @@ sources:
     url: "https://www.cancer.gov/policies/copyright-reuse"
     path: data/raw/nci-reuse-policy_2026-11-20.html
     releases: ["hints5-cycle4", "hints6", "hints7"]
-    redistribution: unknown
+    redistribution: ship
     acquisition: automated
     fetched_on: "2026-11-20"
     bytes: 34509

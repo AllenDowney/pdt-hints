@@ -31,10 +31,13 @@ terms:
     copyright and may be reused without our permission. Credit the National Cancer Institute as
     the source." The files were prepared for NCI by its contractor, Westat. Controlled-access HINTS
     files (HINTS-SEER, the data linkage projects) need approval and aren't used here.
-  data: unknown
-  documentation: unknown
-  metadata: unknown
-  llm_processing: unknown
+  data: ship
+  documentation: ship
+  metadata: ship
+  llm_processing: allowed
+  reviewed_by: Allen Downey
+  reviewed_on: '2026-11-20'
+  notice: "Source: National Cancer Institute, Health Information National Trends Survey (HINTS), public-use data. Users must not publish anything that could identify a respondent, including small cells, must not link the data to identified records, and must not attempt to identify anyone."
 dimensions:
   wave:
     label: "year"

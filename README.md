@@ -2,7 +2,7 @@
 
 Metadata for the [Health Information National Trends Survey (HINTS)](https://hints.cancer.gov/), built to the [PublicDataToolkit](https://github.com/AllenDowney/PublicDataToolkit) standard.
 
-**Status:** 1,380 variable records for three cycles, HINTS 5 Cycle 4 (2020), HINTS 6 (2022) and HINTS 7 (2024), every variable in each public-use file, built from NCI's codebooks and checked against the Stata files. The terms haven't been decided, so nothing ships yet.
+**Status:** 1,380 variable records for three cycles, HINTS 5 Cycle 4 (2020), HINTS 6 (2022) and HINTS 7 (2024), every variable in each public-use file, built from NCI's codebooks and checked against the Stata files. The terms are decided (everything ships), but nothing is published yet.
 
 <!-- The sections below are required, in this order (STANDARD.md §2.3; pdt check C11). Replace each placeholder. -->
 
@@ -12,7 +12,11 @@ The National Cancer Institute's nationally representative survey of US adults ab
 
 ## Terms of use
 
-The terms are at https://hints.cancer.gov/data/download-data.aspx. Downloads need no login or registration. NCI asks users not to publish anything that could identify a respondent, including small cells, not to link the data to identified records, and not to try to learn anyone's identity; NCI text is free of copyright, with credit to NCI. The terms haven't been decided yet, so nothing built from this repo may ship (STANDARD.md §8). What the sources say is quoted in [`dataset.yaml`](dataset.yaml).
+The terms are at https://hints.cancer.gov/data/download-data.aspx. Downloads need no login or registration. NCI asks users not to publish anything that could identify a respondent, including small cells, not to link the data to identified records, and not to try to learn anyone's identity; NCI text is free of copyright, with credit to NCI. Allen Downey reviewed the terms on 2026-11-20: the metadata, the documentation and the common-format data ship, with this notice:
+
+> Source: National Cancer Institute, Health Information National Trends Survey (HINTS), public-use data. Users must not publish anything that could identify a respondent, including small cells, must not link the data to identified records, and must not attempt to identify anyone.
+
+What the sources say is quoted in [`dataset.yaml`](dataset.yaml).
 
 ## How to get the data
 
