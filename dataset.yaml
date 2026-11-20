@@ -8,14 +8,29 @@ publisher:
   url: "https://www.cancer.gov/"
 url: "https://hints.cancer.gov/"
 description: "The National Cancer Institute\u0027s nationally representative survey of US adults about access to and use of health and cancer information, cancer risk perceptions and health behaviors, fielded in cycles since 2003."
-citation: "National Cancer Institute. Health Information National Trends Survey (HINTS)."
+citation: "National Cancer Institute. Health Information National Trends Survey (HINTS), public-use datasets: HINTS 5 Cycle 4 (2020), HINTS 6 (2022) and HINTS 7 (2024). https://hints.cancer.gov/"
 # Terms are decided by a person, never by an agent or this template (STANDARD.md §8).
 # Quote what the terms pages say in `summary`, then have a person set each field
 # to ship or build-only and fill reviewed_by and reviewed_on. `unknown` blocks
 # shipping anything that depends on it.
 terms:
   url: "https://hints.cancer.gov/data/download-data.aspx"
-  summary: Not yet reviewed.
+  summary: >
+    What the sources say (saved as hints-download-data-2026-11-20 and nci-reuse-policy-2026-11-20).
+    The download page has no login, registration or data use agreement. It asks users to "review
+    the following suggestions on how to use HINTS data and then click 'Continue'", and the zips are
+    plain links. NCI "recommends users consider the following provisions": "Do not present or
+    publish data that may enable a respondent to be identified. This includes publication of small
+    cell sizes"; "Do not attempt to link nor permit others to link the data with individually
+    identified records in another database"; "Do not attempt to learn the identity of any person
+    whose data are contained in the supplied file(s)"; and if an identity is discovered
+    inadvertently, don't use it, notify ncihints@mail.nih.gov, and tell no one else. An email
+    address is optional ("not a requirement for data access"). The page says nothing about
+    redistributing the files. NCI's reuse policy (cancer.gov/policies/copyright-reuse): "Unless
+    otherwise indicated, all text within National Cancer Institute (NCI) products is free of
+    copyright and may be reused without our permission. Credit the National Cancer Institute as
+    the source." The files were prepared for NCI by its contractor, Westat. Controlled-access HINTS
+    files (HINTS-SEER, the data linkage projects) need approval and aren't used here.
   data: unknown
   documentation: unknown
   metadata: unknown
@@ -23,10 +38,26 @@ terms:
 dimensions:
   wave:
     label: "year"
+    note: "One cycle per release, named by NCI (HINTS 7); the wave is the year it was fielded."
+design:
+  weights: [PERSON_FINWT0]
+  strata: VAR_STRATUM
+  psu: VAR_CLUSTER
+  replicates:
+    prefix: PERSON_FINWT
+    n: 50
+    method: jk1
+    note: "PERSON_FINWT1 to PERSON_FINWT50, jackknife minus one (the survey overview's 'Final Sample and Replicate Weights for Jackknife Replication'). VAR_STRATUM and VAR_CLUSTER are for Taylor series instead."
 releases:
+  - id: "hints5-cycle4"
+    label: "HINTS 5, Cycle 4 (2020), updated February 2025"
+    status: current
+    sources: [hints5-cycle4-stata]
+  - id: "hints6"
+    label: "HINTS 6 (2022), updated August 2025"
+    status: current
+    sources: [hints6-stata]
   - id: "hints7"
     label: "HINTS 7 (2024), updated August 2025"
     status: current
     sources: [hints7-stata]
-    # A release with several data files lists `tables`, each with an id, label,
-    # sources, key and references (STANDARD.md §2.1). Examples: pdt-nsfg, pdt-fars.

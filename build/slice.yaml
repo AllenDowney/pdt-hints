@@ -1,9 +1,28 @@
-# The variables to build, and facts the sources don't give (origin: hand).
-# Edited by hand; read by build/build_records.py.
-release: "hints7"
-# Start with 30-50 variables that include the hard cases: a battery, an item
-# asked on only some forms, several wordings, several kinds of missing codes,
-# and anything the publisher has corrected (instructions/03-parse-documentation.md).
-variables: {}
-#  name:
-#    measure: categorical   # categorical, ordinal, continuous, count, identifier, weight, text, date
+# The releases and files to build. Edited by hand; read by build/build_records.py.
+# Chosen by Claude (PublicDataToolkit Task 63), 2026-11-20.
+#
+# Three recent cycles, each one public-use file (one row per respondent), taken whole: every
+# variable in the file is built. Each zip holds the Stata file, the codebook (PDF), the annotated
+# instruments, the methodology report and the survey overview; the build reads the codebook as
+# text (pdftotext -layout) from data/interim/.
+author: "Claude (PublicDataToolkit Task 63)"
+date: "2026-11-20"
+releases:
+  hints5-cycle4:
+    year: 2020
+    dir: HINTS5_Cycle4_STATA_20250225/HINTS5_Cycle4_STATA_20250204
+    data: hints5_cycle4_public.dta
+    codebook: HINTS 5 Cycle 4 Public Codebook.txt
+    source: hints5-cycle4-stata
+  hints6:
+    year: 2022
+    dir: HINTS6_STATA_20250731
+    data: hints6_public.dta
+    codebook: HINTS 6 Public Codebook.txt
+    source: hints6-stata
+  hints7:
+    year: 2024
+    dir: HINTS7_STATA_20250731
+    data: hints7_public.dta
+    codebook: HINTS 7 Public Codebook.txt
+    source: hints7-stata

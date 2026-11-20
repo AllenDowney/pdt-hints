@@ -1,0 +1,345 @@
+{
+ "pdt_version": "0.1.0",
+ "inputs_sha256": "bc87b8d033b045a605ec0e11a35e9e1b3b9e71b1b35ae8c84083bf3634c514b7",
+ "generator_sha256": "9ccfde4fa108cb2b4d7e1cdf675082febafe78bc8e89a2be78db6a98e3a26059",
+ "dataset": "hints",
+ "max_tokens": 20000,
+ "shards": [
+  {
+   "kind": "table",
+   "title": "Release hints5-cycle4",
+   "basis": "every variable in the release",
+   "full_records": [
+    "metadata/releases/hints5-cycle4/variables.jsonl"
+   ],
+   "completeness": "complete",
+   "filter": {
+    "release": "hints5-cycle4"
+   },
+   "releases": [
+    "hints5-cycle4"
+   ],
+   "n_in_scope": 433,
+   "rule_versions": {},
+   "notes": [],
+   "count": 433,
+   "files": [
+    {
+     "path": "shards/table/hints5-cycle4.part1.jsonl",
+     "form": "jsonl",
+     "variables": 64,
+     "tokens": 19131
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part2.jsonl",
+     "form": "jsonl",
+     "variables": 58,
+     "tokens": 19236
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part3.jsonl",
+     "form": "jsonl",
+     "variables": 53,
+     "tokens": 19273
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part4.jsonl",
+     "form": "jsonl",
+     "variables": 60,
+     "tokens": 19254
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part5.jsonl",
+     "form": "jsonl",
+     "variables": 57,
+     "tokens": 19477
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part6.jsonl",
+     "form": "jsonl",
+     "variables": 66,
+     "tokens": 19285
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part7.jsonl",
+     "form": "jsonl",
+     "variables": 72,
+     "tokens": 19250
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part8.jsonl",
+     "form": "jsonl",
+     "variables": 3,
+     "tokens": 1844
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part1.txt",
+     "form": "txt",
+     "variables": 422,
+     "tokens": 19155
+    },
+    {
+     "path": "shards/table/hints5-cycle4.part2.txt",
+     "form": "txt",
+     "variables": 11,
+     "tokens": 587
+    }
+   ]
+  },
+  {
+   "kind": "table",
+   "title": "Release hints6",
+   "basis": "every variable in the release",
+   "full_records": [
+    "metadata/releases/hints6/variables.jsonl"
+   ],
+   "completeness": "complete",
+   "filter": {
+    "release": "hints6"
+   },
+   "releases": [
+    "hints6"
+   ],
+   "n_in_scope": 477,
+   "rule_versions": {},
+   "notes": [],
+   "count": 477,
+   "files": [
+    {
+     "path": "shards/table/hints6.part1.jsonl",
+     "form": "jsonl",
+     "variables": 63,
+     "tokens": 19135
+    },
+    {
+     "path": "shards/table/hints6.part2.jsonl",
+     "form": "jsonl",
+     "variables": 48,
+     "tokens": 19224
+    },
+    {
+     "path": "shards/table/hints6.part3.jsonl",
+     "form": "jsonl",
+     "variables": 47,
+     "tokens": 19496
+    },
+    {
+     "path": "shards/table/hints6.part4.jsonl",
+     "form": "jsonl",
+     "variables": 43,
+     "tokens": 19333
+    },
+    {
+     "path": "shards/table/hints6.part5.jsonl",
+     "form": "jsonl",
+     "variables": 53,
+     "tokens": 19336
+    },
+    {
+     "path": "shards/table/hints6.part6.jsonl",
+     "form": "jsonl",
+     "variables": 56,
+     "tokens": 19362
+    },
+    {
+     "path": "shards/table/hints6.part7.jsonl",
+     "form": "jsonl",
+     "variables": 53,
+     "tokens": 19414
+    },
+    {
+     "path": "shards/table/hints6.part8.jsonl",
+     "form": "jsonl",
+     "variables": 98,
+     "tokens": 19422
+    },
+    {
+     "path": "shards/table/hints6.part9.jsonl",
+     "form": "jsonl",
+     "variables": 16,
+     "tokens": 14061
+    },
+    {
+     "path": "shards/table/hints6.part1.txt",
+     "form": "txt",
+     "variables": 290,
+     "tokens": 19227
+    },
+    {
+     "path": "shards/table/hints6.part2.txt",
+     "form": "txt",
+     "variables": 187,
+     "tokens": 8249
+    }
+   ]
+  },
+  {
+   "kind": "table",
+   "title": "Release hints7",
+   "basis": "every variable in the release",
+   "full_records": [
+    "metadata/releases/hints7/variables.jsonl"
+   ],
+   "completeness": "complete",
+   "filter": {
+    "release": "hints7"
+   },
+   "releases": [
+    "hints7"
+   ],
+   "n_in_scope": 470,
+   "rule_versions": {},
+   "notes": [],
+   "count": 470,
+   "files": [
+    {
+     "path": "shards/table/hints7.part1.jsonl",
+     "form": "jsonl",
+     "variables": 65,
+     "tokens": 19381
+    },
+    {
+     "path": "shards/table/hints7.part2.jsonl",
+     "form": "jsonl",
+     "variables": 46,
+     "tokens": 19166
+    },
+    {
+     "path": "shards/table/hints7.part3.jsonl",
+     "form": "jsonl",
+     "variables": 50,
+     "tokens": 19426
+    },
+    {
+     "path": "shards/table/hints7.part4.jsonl",
+     "form": "jsonl",
+     "variables": 53,
+     "tokens": 19472
+    },
+    {
+     "path": "shards/table/hints7.part5.jsonl",
+     "form": "jsonl",
+     "variables": 50,
+     "tokens": 19151
+    },
+    {
+     "path": "shards/table/hints7.part6.jsonl",
+     "form": "jsonl",
+     "variables": 54,
+     "tokens": 19446
+    },
+    {
+     "path": "shards/table/hints7.part7.jsonl",
+     "form": "jsonl",
+     "variables": 56,
+     "tokens": 19518
+    },
+    {
+     "path": "shards/table/hints7.part8.jsonl",
+     "form": "jsonl",
+     "variables": 83,
+     "tokens": 14417
+    },
+    {
+     "path": "shards/table/hints7.part9.jsonl",
+     "form": "jsonl",
+     "variables": 13,
+     "tokens": 13983
+    },
+    {
+     "path": "shards/table/hints7.part1.txt",
+     "form": "txt",
+     "variables": 282,
+     "tokens": 19279
+    },
+    {
+     "path": "shards/table/hints7.part2.txt",
+     "form": "txt",
+     "variables": 188,
+     "tokens": 7858
+    }
+   ]
+  },
+  {
+   "kind": "scale",
+   "title": "Scale signature: yes_no",
+   "basis": "variables with this scale signature in the current release (hints5-cycle4, hints6, hints7)",
+   "full_records": [
+    "metadata/releases/hints5-cycle4/variables.jsonl",
+    "metadata/releases/hints6/variables.jsonl",
+    "metadata/releases/hints7/variables.jsonl"
+   ],
+   "completeness": "complete_by_rule",
+   "filter": {
+    "release": [
+     "hints5-cycle4",
+     "hints6",
+     "hints7"
+    ],
+    "derived": {
+     "scale_signature": "yes_no"
+    }
+   },
+   "releases": [
+    "hints5-cycle4",
+    "hints6",
+    "hints7"
+   ],
+   "n_in_scope": 1380,
+   "rule_versions": {
+    "scale_signature_from_valid_labels": "0.2"
+   },
+   "notes": [],
+   "count": 156,
+   "files": [
+    {
+     "path": "shards/scale/yes-no.part1.jsonl",
+     "form": "jsonl",
+     "variables": 62,
+     "tokens": 19488
+    },
+    {
+     "path": "shards/scale/yes-no.part2.jsonl",
+     "form": "jsonl",
+     "variables": 58,
+     "tokens": 19342
+    },
+    {
+     "path": "shards/scale/yes-no.part3.jsonl",
+     "form": "jsonl",
+     "variables": 36,
+     "tokens": 11856
+    },
+    {
+     "path": "shards/scale/yes-no.txt",
+     "form": "txt",
+     "variables": 156,
+     "tokens": 10596
+    }
+   ]
+  }
+ ],
+ "release_shards": 12,
+ "across_releases": [
+  {
+   "path": "variables.part1.txt",
+   "variables": 436,
+   "tokens": 19131
+  },
+  {
+   "path": "variables.part2.txt",
+   "variables": 356,
+   "tokens": 19126
+  },
+  {
+   "path": "variables.part3.txt",
+   "variables": 313,
+   "tokens": 19252
+  },
+  {
+   "path": "variables.part4.txt",
+   "variables": 275,
+   "tokens": 14217
+  }
+ ]
+}

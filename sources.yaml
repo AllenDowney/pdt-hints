@@ -2,16 +2,74 @@
 # questionnaires, release notes, errata and terms pages, upstream packages.
 # Schema: PublicDataToolkit/schema/sources.schema.json. Edited by hand.
 #
-# Once a file is fetched, fill fetched_on, bytes and sha256 (pdt check C6).
-# An upstream package also needs `version` (a tag or commit), and documentation
-# says which releases it `documents`.
+# Each cycle's zip holds the Stata data file, the public codebook (PDF), the annotated English
+# and Spanish instruments, the methodology report, the survey overview and the history document.
+# The build reads the codebook as text: unzip into data/interim/ and run `pdftotext -layout`.
+# A record's source_location page is the page of the codebook PDF in the zip.
 sources:
+  - id: hints5-cycle4-stata
+    title: "HINTS 5, Cycle 4 (2020), Stata file and documentation (HINTS5_Cycle4_STATA_20250225.zip)"
+    kind: data
+    format: stata
+    url: "https://hints.cancer.gov/dataset/HINTS5_Cycle4_STATA_20250225.zip"
+    path: data/raw/HINTS5_Cycle4_STATA_20250225.zip
+    releases: ["hints5-cycle4"]
+    documents: ["hints5-cycle4"]
+    redistribution: unknown
+    acquisition: automated
+    fetched_on: "2026-11-20"
+    bytes: 13043340
+    sha256: 82006c4442fdda88686f8eaccff37a480b7d0a120c57caef8ce871c70497d4e0
+  - id: hints6-stata
+    title: "HINTS 6 (2022), Stata file and documentation (HINTS6_STATA_20250731.zip)"
+    kind: data
+    format: stata
+    url: "https://hints.cancer.gov/dataset/HINTS6_STATA_20250731.zip"
+    path: data/raw/HINTS6_STATA_20250731.zip
+    releases: ["hints6"]
+    documents: ["hints6"]
+    redistribution: unknown
+    acquisition: automated
+    fetched_on: "2026-11-20"
+    bytes: 19007955
+    sha256: b7cb85cd80acd6b7acdf0c6b0996002bb2a9203f4f4f2a3413de1e70f56c2c66
+    note: "The Stata file's strings are in Windows-1252, not UTF-8."
   - id: hints7-stata
-    title: "HINTS 7 (2024), updated August 2025, data"
+    title: "HINTS 7 (2024), Stata file and documentation (HINTS7_STATA_20250731.zip)"
     kind: data
     format: stata
     url: "https://hints.cancer.gov/dataset/HINTS7_STATA_20250731.zip"
-    path: data/raw/CHANGE-ME
+    path: data/raw/HINTS7_STATA_20250731.zip
     releases: ["hints7"]
+    documents: ["hints7"]
     redistribution: unknown
     acquisition: automated
+    fetched_on: "2026-11-20"
+    bytes: 21385084
+    sha256: 1631fcc0306d32c6e1ac70858c1b6c6db5a11791ca3ecb1a2b967aa31824eeb5
+  - id: hints-download-data-2026-11-20
+    title: "HINTS Download Data page, with NCI's provisions for using HINTS data"
+    kind: other
+    format: html
+    url: "https://hints.cancer.gov/data/download-data.aspx"
+    path: data/raw/hints-download-data_2026-11-20.html
+    releases: ["hints5-cycle4", "hints6", "hints7"]
+    redistribution: unknown
+    acquisition: automated
+    fetched_on: "2026-11-20"
+    bytes: 65111
+    sha256: 77d5d289c76b4779cf438ec6b8df2af171090c2b4e077711aa5890c0baff08ab
+    note: "Quoted in dataset.yaml's terms summary."
+  - id: nci-reuse-policy-2026-11-20
+    title: "Reuse of NCI Information Policy (cancer.gov)"
+    kind: other
+    format: html
+    url: "https://www.cancer.gov/policies/copyright-reuse"
+    path: data/raw/nci-reuse-policy_2026-11-20.html
+    releases: ["hints5-cycle4", "hints6", "hints7"]
+    redistribution: unknown
+    acquisition: automated
+    fetched_on: "2026-11-20"
+    bytes: 34509
+    sha256: 2d7b414e7b252f5004a8c6fe5bbdcd17098627b9ee518fb47e2d0b95527792df
+    note: "Quoted in dataset.yaml's terms summary."

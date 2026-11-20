@@ -1,0 +1,45 @@
+{
+ "pdt_version": "0.1.0",
+ "inputs_sha256": "bc87b8d033b045a605ec0e11a35e9e1b3b9e71b1b35ae8c84083bf3634c514b7",
+ "generator_sha256": "9ccfde4fa108cb2b4d7e1cdf675082febafe78bc8e89a2be78db6a98e3a26059",
+ "dataset": "hints",
+ "spec": "0.1.0",
+ "files": [
+  "hints5-cycle4.yaml",
+  "hints6.yaml",
+  "hints7.yaml",
+  "LOSSES.md"
+ ],
+ "losses": {
+  "hints5-cycle4": {
+   "release_version": 1,
+   "variables": 433,
+   "untyped": 64,
+   "availability": 433,
+   "provenance_fields": 1649,
+   "numeric_code_labels": 352,
+   "missing_codes": 927,
+   "derived": 156
+  },
+  "hints6": {
+   "release_version": 1,
+   "variables": 477,
+   "untyped": 64,
+   "availability": 477,
+   "provenance_fields": 1814,
+   "numeric_code_labels": 400,
+   "missing_codes": 1432,
+   "derived": 156
+  },
+  "hints7": {
+   "release_version": 1,
+   "variables": 470,
+   "untyped": 66,
+   "availability": 470,
+   "provenance_fields": 1783,
+   "numeric_code_labels": 389,
+   "missing_codes": 1334,
+   "derived": 156
+  }
+ }
+}
