@@ -1,7 +1,7 @@
 {
- "pdt_version": "0.2.1",
+ "pdt_version": "0.2.2",
  "inputs_sha256": "7d147b590ce259e0b962917fcd93b08257aa9e7376743441b3d9b9f1694d55f4",
- "generator_sha256": "5bd837fcfa83e3bb04c37847b6e1662f093b130380ce5a4ef1067334b670c30d",
+ "generator_sha256": "6708a578169493f69fc6f399572ef26b8ef504c92cfe881d96369c48f83bc0cd",
  "dataset": "hints",
  "max_tokens": 20000,
  "shards": [
