@@ -1,0 +1,32 @@
+# The dataset, its terms and its releases (STANDARD.md §2.1, §8).
+# Schema: PublicDataToolkit/schema/dataset.schema.json. Edited by hand.
+standard_version: "0.1"
+id: hints
+title: "Health Information National Trends Survey (HINTS)"
+publisher:
+  name: "National Cancer Institute (NCI), National Institutes of Health"
+  url: "https://www.cancer.gov/"
+url: "https://hints.cancer.gov/"
+description: "The National Cancer Institute\u0027s nationally representative survey of US adults about access to and use of health and cancer information, cancer risk perceptions and health behaviors, fielded in cycles since 2003."
+citation: "National Cancer Institute. Health Information National Trends Survey (HINTS)."
+# Terms are decided by a person, never by an agent or this template (STANDARD.md §8).
+# Quote what the terms pages say in `summary`, then have a person set each field
+# to ship or build-only and fill reviewed_by and reviewed_on. `unknown` blocks
+# shipping anything that depends on it.
+terms:
+  url: "https://hints.cancer.gov/data/download-data.aspx"
+  summary: Not yet reviewed.
+  data: unknown
+  documentation: unknown
+  metadata: unknown
+  llm_processing: unknown
+dimensions:
+  wave:
+    label: "year"
+releases:
+  - id: "hints7"
+    label: "HINTS 7 (2024), updated August 2025"
+    status: current
+    sources: [hints7-stata]
+    # A release with several data files lists `tables`, each with an id, label,
+    # sources, key and references (STANDARD.md §2.1). Examples: pdt-nsfg, pdt-fars.

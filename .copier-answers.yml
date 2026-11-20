@@ -1,0 +1,22 @@
+# Changes here will be overwritten by Copier; do not edit by hand.
+_commit: v0.1.0
+_src_path: /home/downey/PublicDataToolkit
+citation: National Cancer Institute. Health Information National Trends Survey (HINTS).
+dataset_id: hints
+dataset_url: https://hints.cancer.gov/
+description: The National Cancer Institute's nationally representative survey of US
+    adults about access to and use of health and cancer information, cancer risk perceptions
+    and health behaviors, fielded in cycles since 2003.
+form_label: ''
+publisher_name: National Cancer Institute (NCI), National Institutes of Health
+publisher_url: https://www.cancer.gov/
+release_id: hints7
+release_label: HINTS 7 (2024), updated August 2025
+source_format: stata
+source_id: hints7-stata
+source_kind: data
+source_url: https://hints.cancer.gov/dataset/HINTS7_STATA_20250731.zip
+standard_version: '0.1'
+terms_url: https://hints.cancer.gov/data/download-data.aspx
+title: Health Information National Trends Survey (HINTS)
+wave_label: year
