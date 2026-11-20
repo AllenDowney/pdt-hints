@@ -1,7 +1,7 @@
 {
  "pdt_version": "0.1.0",
- "inputs_sha256": "c5eabe2d91937bf13b9f713c81c6a4cdb5a1c334a628d032a1452e05ff6dd9fb",
- "generator_sha256": "9ccfde4fa108cb2b4d7e1cdf675082febafe78bc8e89a2be78db6a98e3a26059",
+ "inputs_sha256": "7d147b590ce259e0b962917fcd93b08257aa9e7376743441b3d9b9f1694d55f4",
+ "generator_sha256": "feed02ead6fb62dd3ce5164d7c62ab1bc77fefdf83e06a7164b95afa87aba2cf",
  "dataset": "hints",
  "max_tokens": 20000,
  "shards": [
@@ -28,19 +28,19 @@
      "path": "shards/table/hints5-cycle4.part1.jsonl",
      "form": "jsonl",
      "variables": 64,
-     "tokens": 19131
+     "tokens": 19133
     },
     {
      "path": "shards/table/hints5-cycle4.part2.jsonl",
      "form": "jsonl",
      "variables": 58,
-     "tokens": 19236
+     "tokens": 19238
     },
     {
      "path": "shards/table/hints5-cycle4.part3.jsonl",
      "form": "jsonl",
      "variables": 53,
-     "tokens": 19273
+     "tokens": 19280
     },
     {
      "path": "shards/table/hints5-cycle4.part4.jsonl",
@@ -58,7 +58,7 @@
      "path": "shards/table/hints5-cycle4.part6.jsonl",
      "form": "jsonl",
      "variables": 66,
-     "tokens": 19285
+     "tokens": 19290
     },
     {
      "path": "shards/table/hints5-cycle4.part7.jsonl",
@@ -109,37 +109,37 @@
      "path": "shards/table/hints6.part1.jsonl",
      "form": "jsonl",
      "variables": 63,
-     "tokens": 19135
+     "tokens": 19210
     },
     {
      "path": "shards/table/hints6.part2.jsonl",
      "form": "jsonl",
      "variables": 48,
-     "tokens": 19224
+     "tokens": 19227
     },
     {
      "path": "shards/table/hints6.part3.jsonl",
      "form": "jsonl",
      "variables": 47,
-     "tokens": 19496
+     "tokens": 19503
     },
     {
      "path": "shards/table/hints6.part4.jsonl",
      "form": "jsonl",
      "variables": 43,
-     "tokens": 19333
+     "tokens": 19336
     },
     {
      "path": "shards/table/hints6.part5.jsonl",
      "form": "jsonl",
      "variables": 53,
-     "tokens": 19336
+     "tokens": 19339
     },
     {
      "path": "shards/table/hints6.part6.jsonl",
      "form": "jsonl",
      "variables": 56,
-     "tokens": 19362
+     "tokens": 19367
     },
     {
      "path": "shards/table/hints6.part7.jsonl",
@@ -151,7 +151,7 @@
      "path": "shards/table/hints6.part8.jsonl",
      "form": "jsonl",
      "variables": 98,
-     "tokens": 19422
+     "tokens": 19427
     },
     {
      "path": "shards/table/hints6.part9.jsonl",
@@ -195,50 +195,50 @@
     {
      "path": "shards/table/hints7.part1.jsonl",
      "form": "jsonl",
-     "variables": 65,
-     "tokens": 19381
+     "variables": 64,
+     "tokens": 19215
     },
     {
      "path": "shards/table/hints7.part2.jsonl",
      "form": "jsonl",
      "variables": 46,
-     "tokens": 19166
+     "tokens": 19225
     },
     {
      "path": "shards/table/hints7.part3.jsonl",
      "form": "jsonl",
      "variables": 50,
-     "tokens": 19426
+     "tokens": 19395
     },
     {
      "path": "shards/table/hints7.part4.jsonl",
      "form": "jsonl",
      "variables": 53,
-     "tokens": 19472
+     "tokens": 19445
     },
     {
      "path": "shards/table/hints7.part5.jsonl",
      "form": "jsonl",
      "variables": 50,
-     "tokens": 19151
+     "tokens": 19165
     },
     {
      "path": "shards/table/hints7.part6.jsonl",
      "form": "jsonl",
      "variables": 54,
-     "tokens": 19446
+     "tokens": 19516
     },
     {
      "path": "shards/table/hints7.part7.jsonl",
      "form": "jsonl",
-     "variables": 56,
-     "tokens": 19518
+     "variables": 55,
+     "tokens": 19338
     },
     {
      "path": "shards/table/hints7.part8.jsonl",
      "form": "jsonl",
-     "variables": 83,
-     "tokens": 14417
+     "variables": 85,
+     "tokens": 14974
     },
     {
      "path": "shards/table/hints7.part9.jsonl",

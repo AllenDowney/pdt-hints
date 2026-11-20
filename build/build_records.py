@@ -50,6 +50,9 @@ LISTING_MIN = 5          # a label repeated on this many codes is a listing of a
 # ---------------------------------------------------------------- the codebook
 
 ROW = re.compile(r"^\s*(?P<code>\S.*?)\s{2,}(?P<label>\S.*?)\s{2,}(?P<n>[\d,]+)\s+[\d.]+\s+[\d,]+\s+[\d,]+\s+[\d.]+\s*$")
+# A row with no code printed: a string variable's blank value (hints7 APP_REGION "Non-Appalachia").
+ROW_NO_CODE = re.compile(r"^\s{2,}(?P<label>\S.*?)\s{2,}(?P<n>[\d,]+)\s+[\d.]+\s+[\d,]+\s+[\d,]+\s+[\d.]+\s*$")
+VERBATIM = "Verbatim response"   # an open-ended item's respondent text, listed as if it were a code
 NUMBER = re.compile(r"^-?\d+(?:\.\d+)?$")
 
 
@@ -93,6 +96,10 @@ def parse_codebook(text):
                                       "n": int(r.group("n").replace(",", ""))})
                 elif r:
                     e["kind"] = r.group("code")      # "Text String" or "Number": no codes listed
+                elif ROW_NO_CODE.match(line):
+                    r = ROW_NO_CODE.match(line)
+                    e["rows"].append({"code": None, "label": r.group("label").strip(),
+                                      "n": int(r.group("n").replace(",", ""))})
                 elif (e["rows"] and s and line.startswith(" " * 10) and not re.fullmatch(r"\d+", s)
                       and not re.search(r"Unweighted|Weighted|Percent|\(Estimated\)", s)):
                     e["rows"][-1]["label"] += ("" if s.startswith("_") else " ") + s   # a label wrapped onto the next line
@@ -120,7 +127,9 @@ RULE_MISSING = {"origin": "rule", "rule": "hints_missing_types", "rule_version":
                         "responses are uncodeable; -6 'Filter Missing' (the filter question was left blank, so it isn't "
                         "known whether the item applied) is inap or skipped; -7 'Web partial - Question Never Seen' "
                         "(a web respondent stopped before reaching it) is not_asked; -9 'Not Ascertained' is skipped: "
-                        "HINTS is self-administered, so an item left blank was skipped by the respondent."}
+                        "HINTS is self-administered, so an item left blank was skipped by the respondent. Stata's "
+                        "system missing '.', where the codebook lists it with a reason ('Non-web case', 'Not sampled "
+                        "for nonresponse follow-up'), is inap."}
 RULE_SPLIT = {"origin": "rule", "rule": "hints_label_split", "rule_version": RULE_VERSION,
               "note": "The codebook's Variable Label is the item number and the question ('A1. Have you ever ...'); "
                       "the rule splits them at the first '. '."}
@@ -138,6 +147,39 @@ def missing_types(code, label):
 
 
 # ---------------------------------------------------------------- build
+
+def string_values(release, entry, counts, source):
+    """A string variable's codes, as the data stores them: text ("-1", "A"). The respondents'
+    verbatim answers the codebook lists for an open-ended item aren't codes and are left out.
+    A row with no code printed is the data's blank value (rule hints_blank_code)."""
+    values, report = [], []
+    blank = next((c for c in counts if isinstance(c, str) and c.strip() == ""), "")
+    # An open-ended item lists its respondents' answers ("Verbatim response", wrapped or not); only
+    # its numeric codes (-1 to -9) are codes.
+    open_ended = any(re.search(r"verbatim", r["label"], re.I) for r in entry["rows"])
+    for r in entry["rows"]:
+        code = r["code"]
+        if open_ended and (code is None or not NUMBER.match(code)):
+            continue
+        if code is None:
+            code = blank
+        item = {"code": code, "label": r["label"], "kind": "valid", "n": r["n"]}
+        if r["code"] is None:
+            item["origin"] = {"origin": "rule", "rule": "hints_blank_code", "rule_version": RULE_VERSION,
+                              "source": source, "note": f"The codebook prints no code for {r['label']!r}; "
+                                                        f"the data's blank value is {code!r}."}
+        if NUMBER.match(code) and code_value(code) < 0:
+            types = missing_types(code_value(code), r["label"])
+            if types:
+                item["kind"], item["missing_types"] = "missing", types
+            else:
+                item["kind"] = "unresolved"
+                item["origin"] = {**RULE_MISSING, "note": f"A negative code whose label the rule doesn't know: "
+                                                          f"{r['label']!r}."}
+                report.append(("unresolved", f"{release} `{entry['name']}` {code} {r['label']!r}"))
+        values.append(item)
+    return values, report
+
 
 def build_record(release, year, entry, col, source, codebook_path, stata_labels=None):
     rec = {"dataset": DATASET, "release": release, "name": entry["name"]}
@@ -165,14 +207,18 @@ def build_record(release, year, entry, col, source, codebook_path, stata_labels=
         elif is_date:
             counts["date"] += int(v)
         elif is_string:
-            s = str(k).strip()
-            counts[code_value(s) if NUMBER.match(s) else s] += int(v)
+            counts[str(k)] += int(v)          # as stored: "-1", " "
         else:
             counts[code_value(k)] += int(v)
-    numeric = [r for r in entry["rows"] if NUMBER.match(r["code"])]
+    numeric = [r for r in entry["rows"] if r["code"] is not None and NUMBER.match(r["code"])]
     positive_labels = collections.Counter(r["label"] for r in numeric if code_value(r["code"]) >= 0)
-    listing = {lab for lab, n in positive_labels.items() if n >= LISTING_MIN}
+    listing = {lab for lab, n in positive_labels.items() if n >= LISTING_MIN and not is_string}
     values, listed_codes, report = [], [], []
+    if is_string:
+        values, report = string_values(release, entry, counts, source)
+        numeric = []
+    for r in [r for r in entry["rows"] if r["code"] == "." and not is_string]:
+        values.append({"code": ".", "label": r["label"], "kind": "missing", "missing_types": ["inap"], "n": r["n"]})
     for r in numeric:
         code = code_value(r["code"])
         if code >= 0 and r["label"] in listing:
@@ -213,12 +259,12 @@ def build_record(release, year, entry, col, source, codebook_path, stata_labels=
         rec["notes"] = f"The codebook lists each value with the label {sorted(listing)[0]!r}."
     missing = {v["code"] for v in values if v["kind"] != "valid"}
 
-    n = sum(c for code, c in counts.items() if code not in missing and code != "" and code != ".")
+    n = sum(c for code, c in counts.items() if code not in missing and code != ".")
     rec["availability"] = [{"wave": year, "n": n}] if n else []
     fields["storage_type"] = {"origin": "rule", "rule": "storage_type_from_values", "rule_version": RULE_VERSION,
                               "source": source}
     fields["availability"] = {"origin": "data_file", "source": source,
-                              "note": "n counts the respondents whose code isn't missing."}
+                              "note": "n counts the respondents with a value that isn't a missing code (blank text counts as a value)."}
     rec["source_location"] = {"source": source, "page": entry["page"], "anchor": entry["name"]}
     rec["provenance"] = {"record": {"origin": "publisher", "source": source}, "fields": fields}
     if missing:
@@ -232,8 +278,11 @@ def build_record(release, year, entry, col, source, codebook_path, stata_labels=
             report.append(("undocumented", f"{release} `{entry['name']}`: {len(extra)} codes not in the codebook, "
                                            f"e.g. {extra[:5]}"))
     # C5: the codebook's counts against the data's.
-    for r in numeric:
-        got = counts.get(code_value(r["code"]), 0)
+    checked = numeric + [r for r in entry["rows"] if r["code"] == "." and not is_string]
+    if is_string:
+        checked = [{"code": v["code"], "label": v["label"], "n": v["n"]} for v in values]
+    for r in checked:
+        got = counts.get(r["code"] if is_string or r["code"] == "." else code_value(r["code"]), 0)
         if got != r["n"]:
             report.append(("counts", f"{release} `{entry['name']}` {r['code']} ({r['label']}): "
                                      f"codebook {r['n']}, data {got}"))

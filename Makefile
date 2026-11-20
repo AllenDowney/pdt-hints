@@ -2,7 +2,7 @@ PYTHON ?= python
 # A PublicDataToolkit checkout. Or `pip install -e $(PDT)` and run `pdt check`.
 PDT ?= ../PublicDataToolkit
 
-.PHONY: download build views check
+.PHONY: download build data views check
 
 ## Fetch the sources into data/raw. Read the publisher's terms first, then: make download ARGS=--accept-terms
 download:
@@ -12,6 +12,10 @@ download:
 build:
 	$(PYTHON) build/build_records.py
 	$(PYTHON) build/build_links.py
+
+## Write data/processed/ in the common format, for pdt check's data checks (needs the zips unzipped into data/interim/)
+data:
+	PYTHONPATH=$(PDT)/lib $(PYTHON) scripts/build_data.py
 
 ## Generate agent/, docs/ and export/ from the records (pdt views)
 views:
